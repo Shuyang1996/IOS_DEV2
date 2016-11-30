@@ -18,6 +18,7 @@
 		3D7812361DA8640600359101 /* profilePicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7812351DA8640600359101 /* profilePicController.swift */; };
 		3D78123A1DA868EF00359101 /* momentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7812391DA868EF00359101 /* momentsController.swift */; };
 		3D78123C1DA86B8C00359101 /* userController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78123B1DA86B8C00359101 /* userController.swift */; };
+		3D9775EB1DEEB7EF0077F28E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9775EA1DEEB7EF0077F28E /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3D7812351DA8640600359101 /* profilePicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profilePicController.swift; sourceTree = "<group>"; };
 		3D7812391DA868EF00359101 /* momentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = momentsController.swift; sourceTree = "<group>"; };
 		3D78123B1DA86B8C00359101 /* userController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userController.swift; sourceTree = "<group>"; };
+		3D9775EA1DEEB7EF0077F28E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +107,8 @@
 		3D29CF6E1DA808AD0029492B /* compare2 */ = {
 			isa = PBXGroup;
 			children = (
+				3D9775E91DEEB7350077F28E /* controller */,
 				3D29CF6F1DA808AD0029492B /* AppDelegate.swift */,
-				3D29CF711DA808AD0029492B /* ViewController.swift */,
 				3D29CF791DA808AD0029492B /* Assets.xcassets */,
 				3D29CF7B1DA808AD0029492B /* LaunchScreen.storyboard */,
 				3D29CF7E1DA808AD0029492B /* Info.plist */,
@@ -135,6 +137,15 @@
 				3D29CF941DA808AE0029492B /* Info.plist */,
 			);
 			path = compare2UITests;
+			sourceTree = "<group>";
+		};
+		3D9775E91DEEB7350077F28E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D29CF711DA808AD0029492B /* ViewController.swift */,
+				3D9775EA1DEEB7EF0077F28E /* LoginController.swift */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				3D7812361DA8640600359101 /* profilePicController.swift in Sources */,
 				3D29CF721DA808AD0029492B /* ViewController.swift in Sources */,
 				3D78123A1DA868EF00359101 /* momentsController.swift in Sources */,
+				3D9775EB1DEEB7EF0077F28E /* LoginController.swift in Sources */,
 				3D29CF701DA808AD0029492B /* AppDelegate.swift in Sources */,
 				3D7812341DA863B800359101 /* chatsController.swift in Sources */,
 			);

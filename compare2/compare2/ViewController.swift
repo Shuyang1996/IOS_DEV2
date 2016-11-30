@@ -8,54 +8,19 @@
 
 import UIKit
 
-class ViewController: UITabBarController, UITabBarControllerDelegate  {
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title:"logout", style:.plain, target: self, action: #selector(handleLogout))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func handleLogout(){
+        let loginController = LoginController()
+        present(loginController, animated:true, completion:nil)
         
-        navigationItem.title = "Chats"
-        
-        
-        // main tab bar items
-        // Create chats tab
-        let tabChats = chatsController()
-        let tabChatsBarItem = UITabBarItem(title: "Chats", image: UIImage(named: "chats.png"), selectedImage: UIImage(named: "selectedImage.png"))
-        
-        tabChats.tabBarItem = tabChatsBarItem
-        
-        
-        // Create moments tab
-        let tabMoments = momentsController()
-        let tabMomentsItem = UITabBarItem(title: "Moments", image: UIImage(named: "moments.png"), selectedImage: UIImage(named: "selectedImage2.png"))
-        tabMoments.tabBarItem = tabMomentsItem
-        
-        
-        // Create profile tab
-        let tabProfile = profilePicController()
-        let tabProfileBarItem2 = UITabBarItem(title: "Profile", image: UIImage(named: "profile.png"), selectedImage: UIImage(named: "selectedImage2.png"))
-        
-        tabProfile.tabBarItem = tabProfileBarItem2
-        
-        
-        // Create user tab
-        let tabUser = userController()
-        let tabUserItem = UITabBarItem(title: "User",  image: UIImage(named: "me.png"), selectedImage: UIImage(named: "selectedImage2"))
-        tabUser.tabBarItem = tabUserItem
-        
-        
-        self.viewControllers = [tabChats, tabMoments, tabProfile, tabUser]
     }
     
-    // UITabBarControllerDelegate method
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected \(viewController.title!)")
-    }
-
 
 }
 
