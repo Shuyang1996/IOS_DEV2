@@ -1,4 +1,3 @@
- //
 //  LoginController.swift
 //  compare2
 //
@@ -10,23 +9,88 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    //create inputsContainerView unit
+    let inputsContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        //need to change this value to false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 5;
+        view.layer.masksToBounds = true
+        return view
+    }()
     
+    let loginRegisterButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r:80, g:101, b:161)
+        button.setTitle("Register", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        return button
+    }()
     
+    let nameTextField: UITextField = {
+        //create text field
+        let tf = UITextField()
+        tf.placeholder = "Name"
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
     
+    let nameSeparatorView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(r:220, g:220, b:220)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
         
-        let inputsContainerView = UIView();
-        inputsContainerView.backgroundColor = UIColor.white
-        
         view.addSubview(inputsContainerView)
+        view.addSubview(loginRegisterButton)
+        
+        setupInputsContainerView()
+        setupLoginRegisterButton()
+        
+    }
+    
+    func setupInputsContainerView(){
         
         //need x,y, width, height constraints
-        inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        inputsContainerView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        //here add a subview for name text field
+        inputsContainerView.addSubview(nameTextField)
+        inputsContainerView.addSubview(nameSeparatorView)
+        
+        //need x,y, width, height constraints for nameTextField
+        nameTextField.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor, constant:12).isActive = true
+        nameTextField.topAnchor.constraint(equalTo: inputsContainerView.topAnchor).isActive = true
+        nameTextField.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
+        nameTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3).isActive = true
+        
+        //need x,y, width, height constraints for nameSeparatorView
+        nameSeparatorView.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive = true
+        nameSeparatorView.widthAnchor.constraint(equalTo: nameTextField.widthAnchor).isActive = true
+        nameSeparatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        
+    }
+    
+    func setupLoginRegisterButton(){
+        loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant:12).isActive = true
+        loginRegisterButton.widthAnchor.constraint(equalTo:inputsContainerView.widthAnchor).isActive = true
+        loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
     }
 
