@@ -24,7 +24,7 @@ class ViewController: UITableViewController {
     func handleLogout(){
         
         do {
-            try FIRAuth.auth()?.signOut()
+            try FIRAuth.auth()?.signOut() // Firebase syntax, firebase signout function
         } catch let logoutError {
             print(logoutError)
         }
