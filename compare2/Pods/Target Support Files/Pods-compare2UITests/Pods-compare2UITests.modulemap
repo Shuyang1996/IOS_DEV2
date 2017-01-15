@@ -1,0 +1,6 @@
+framework module Pods_compare2UITests {
+  umbrella header "Pods-compare2UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
