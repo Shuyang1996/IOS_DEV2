@@ -90,7 +90,8 @@ class LoginController: UIViewController {
                     return
                 }
                 
-                print("Saved user successfully into Firebase db")
+                //this is a bug after user register
+                self.dismiss(animated: true, completion: nil)
             })
             
         })
