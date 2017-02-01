@@ -19,6 +19,7 @@
 		3D7812361DA8640600359101 /* profilePicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7812351DA8640600359101 /* profilePicController.swift */; };
 		3D78123A1DA868EF00359101 /* momentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7812391DA868EF00359101 /* momentsController.swift */; };
 		3D78123C1DA86B8C00359101 /* userController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78123B1DA86B8C00359101 /* userController.swift */; };
+		3D8279981E2F562A001A3F59 /* LoginControllerHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8279971E2F562A001A3F59 /* LoginControllerHandlers.swift */; };
 		3D9775EB1DEEB7EF0077F28E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9775EA1DEEB7EF0077F28E /* LoginController.swift */; };
 		3DB212B81E2D7CE500DB7A45 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB212B71E2D7CE500DB7A45 /* NewMessageController.swift */; };
 		3DB212BD1E2DD67300DB7A45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB212BC1E2DD67300DB7A45 /* User.swift */; };
@@ -63,6 +64,7 @@
 		3D7812351DA8640600359101 /* profilePicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profilePicController.swift; sourceTree = "<group>"; };
 		3D7812391DA868EF00359101 /* momentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = momentsController.swift; sourceTree = "<group>"; };
 		3D78123B1DA86B8C00359101 /* userController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userController.swift; sourceTree = "<group>"; };
+		3D8279971E2F562A001A3F59 /* LoginControllerHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerHandlers.swift; sourceTree = "<group>"; };
 		3D9775EA1DEEB7EF0077F28E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3DB212B71E2D7CE500DB7A45 /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		3DB212BC1E2DD67300DB7A45 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				3D29CF711DA808AD0029492B /* MessageController.swift */,
 				3D9775EA1DEEB7EF0077F28E /* LoginController.swift */,
 				3DB212B71E2D7CE500DB7A45 /* NewMessageController.swift */,
+				3D8279971E2F562A001A3F59 /* LoginControllerHandlers.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D78123C1DA86B8C00359101 /* userController.swift in Sources */,
+				3D8279981E2F562A001A3F59 /* LoginControllerHandlers.swift in Sources */,
 				3D29CF781DA808AD0029492B /* compare2.xcdatamodeld in Sources */,
 				3D7812361DA8640600359101 /* profilePicController.swift in Sources */,
 				3D29CF721DA808AD0029492B /* MessageController.swift in Sources */,

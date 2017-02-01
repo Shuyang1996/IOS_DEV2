@@ -61,42 +61,7 @@ class LoginController: UIViewController {
         })
     }
     
-    func handleRegister() {
-        //create variables carrying data
-        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
-            print("Form is not valid")
-            return
-        }
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {
-            (user:FIRUser?, error) in
-            if error != nil {
-                print(error)
-                return
-            }
-            
-            guard let uid = user?.uid else {
-                return
-            }
-            
-            //successfully authenticated user
-            let ref = FIRDatabase.database().reference(fromURL: "https://comparedev-7a014.firebaseio.com/")
-            let usersReference = ref.child("users").child(uid)
-            let values = ["names":name, "email":email]
-            
-            usersReference.updateChildValues(values,withCompletionBlock: { (err, ref) in
-                if err != nil {
-                    print(err)
-                    return
-                }
-                
-                //this is a bug after user register
-                self.dismiss(animated: true, completion: nil)
-            })
-            
-        })
-    }
-    
+
     let nameTextField: UITextField = {
         //create text field
         let tf = UITextField()
@@ -134,9 +99,13 @@ class LoginController: UIViewController {
     }()
     
     //there is a bug associated with this profile image
-    let profileImageView: UIImageView = {
+    lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "chats")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView) ) )
+        imageView.isUserInteractionEnabled = true
+        
         return imageView
     }()
     
@@ -187,21 +156,22 @@ class LoginController: UIViewController {
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
+        view.addSubview(profileImageView)
         view.addSubview(loginRegisterSegmentedControl)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupLoginRegisterChange()
-//        setupProfileImageView()
+        setupProfileImageView()
         
     }
     
-//    func setupProfileImageView() {
-//        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        profileImageView.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: -12).isActive = true
-//        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-//        profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-//    }
+    func setupProfileImageView() {
+        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -12).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+    }
     
     var inputsContainerViewHeightAnchor: NSLayoutConstraint?
     var nameTextFieldHeightAnchor: NSLayoutConstraint?
