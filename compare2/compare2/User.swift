@@ -11,4 +11,5 @@ import UIKit
 class User: NSObject {
     var names: String?
     var email: String?
+    var profileImageUrl: String?
 }
